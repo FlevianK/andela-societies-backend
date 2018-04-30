@@ -67,7 +67,7 @@ test:env_file
 release:
 	${INFO} "Building required docker image for the application"
 	@ echo " "
-	@ docker-compose -p $(DOCKER_REL_PROJECT) -f $(DOCKER_REL_COMPOSE_FILE) up --no-start app
+	@ docker-compose -p $(DOCKER_REL_PROJECT) -f $(DOCKER_REL_COMPOSE_FILE) up -d --no-start app
 	${INFO} "Build Completed successfully"
 
 ## Tag the project image
