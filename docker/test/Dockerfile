@@ -1,7 +1,6 @@
 FROM python:3.6
 
-MAINTAINER "Crispus Kamau <crispus.kamau@andela.com>"
-
+MAINTAINER "Flevian Kanaiza <flevian.kanaiza@andela.com>"
 LABEL application="andela-societies-backend"
 
 # Prevent dpkg errors
