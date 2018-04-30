@@ -8,7 +8,7 @@ else
     IMAGE_TAG="${CIRCLE_BRANCH}-${COMMIT_HASH}"
 fi
 
-echo "====> Store Sand authenticate with service account"
+echo "====> Store and authenticate with service account"
 echo $GCLOUD_SERVICE_KEY | base64 --decode > ${HOME}/gcloud-service-key.json
 
 echo "====> Login to docker registry"
