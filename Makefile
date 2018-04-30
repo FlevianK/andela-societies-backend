@@ -67,7 +67,7 @@ test:env_file
 release:
 	${INFO} "Building required docker image for the application"
 	@ echo " "
-	@ docker-compose -p $(DOCKER_REL_PROJECT) -f $(DOCKER_REL_COMPOSE_FILE) build --pull app
+	@ docker-compose -p $(DOCKER_REL_PROJECT) -f $(DOCKER_REL_COMPOSE_FILE) up --no-start app
 	${INFO} "Build Completed successfully"
 
 ## Tag the project image
@@ -93,11 +93,11 @@ destroy:
 	${INFO} "Clean complete"
 	
 ifeq (tag,$(firstword $(MAKECMDGOALS)))
-	TAG_ARGS := $(word 2, $(MAKECMDGOALS))
-	ifeq ($(TAG_ARGS),)
-		$(error You must specify a tag)
-	endif
-	$(eval $(TAG_ARGS):;@:)
+  TAG_ARGS := $(word 2, $(MAKECMDGOALS))
+  ifeq ($(TAG_ARGS),)
+    $(error You must specify a tag)
+  endif
+  $(eval $(TAG_ARGS):;@:)
 endif
 
 # COLORS
