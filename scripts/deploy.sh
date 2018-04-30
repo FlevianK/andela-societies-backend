@@ -13,7 +13,7 @@ echo $GCLOUD_SERVICE_KEY | base64 --decode > ${HOME}/gcloud-service-key.json
 
 echo "====> Login to docker registry"
 
-docker login -u _json_key --password-stdin https://gcr.io < ${HOME}/gcloud-service-key.json
+docker login -u _json_key -p "$(cat ${HOME}/gcloud-service-key.json)" https://gcr.io
 
 make release
 
