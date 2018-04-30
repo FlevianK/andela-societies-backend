@@ -68,7 +68,7 @@ release:
 	${INFO} "Building required docker image for the application"
 	@ echo " "
 	@ docker-compose -p $(DOCKER_REL_PROJECT) -f $(DOCKER_REL_COMPOSE_FILE) build app
-	@ docker-compose -p $(DOCKER_REL_PROJECT) -f $(DOCKER_REL_COMPOSE_FILE) run app
+	@ docker-compose -p $(DOCKER_REL_PROJECT) -f $(DOCKER_REL_COMPOSE_FILE) run -d app
 	${INFO} "Build Completed successfully"
 
 ## Tag the project image
